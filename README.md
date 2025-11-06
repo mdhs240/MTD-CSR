@@ -87,7 +87,6 @@
 - `category, sub_category`: Project classification
 - `project_type`: One-time/Ongoing/Recurring
 - `focus_area`: Areas of work (Array)
-- `sdg_goals`: UN Sustainable Development Goals (Array)
 - `status`: Current phase (planning/active/on_hold/completed/cancelled/archived)
 - `start_date, expected_end_date, actual_end_date`: Timeline
 - `duration_months`: Project length
@@ -875,7 +874,7 @@
 
 ---
 
-## 32. VENDORS
+## 32. VENDORS(OPTIONAL GPT NA SUGGEST KIYA YEH ISLIYA DAAL DIYA BUT PDF MA MENTION NAHI THA)
 **Purpose:** Vendor master database with performance tracking
 
 **Fields:**
