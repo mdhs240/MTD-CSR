@@ -25,7 +25,6 @@
 - `role`: Access level (client/project_manager/accountant/admin/team_member)
 - `department, team, designation`: Org structure
 - `manager_id, reporting_to`: Hierarchy links
-- `avatar_drive_link`: Profile photo (Google Drive)
 - `date_of_joining`: Employment start
 - `employee_id`: HR ID (unique)
 - `is_active`: Account status
