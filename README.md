@@ -50,10 +50,12 @@
 - `website`: Partner website URL
 - `logo_drive_link`: Company logo (Google Drive)
 - `mou_drive_link`: Memorandum of Understanding document (Google Drive)
+  
 DOUBT (might calculate from Project Table)- `budget_allocated`: Total budget from partner
 DOUBT (might calculate from Project Table)- `budget_utilized`: Amount already spent
 DOUBT (might calculate from Project Table)- `budget_pending`: Amount in pending expenses
 DOUBT - `fiscal_year`: Budget period
+
 - `agreement_start_date, agreement_end_date`: Contract validity
 - `payment_terms`: Payment conditions
 - `billing_cycle`: Invoice frequency
@@ -135,7 +137,7 @@ THOUGHT OF- `project_plan_drive_link`: Detailed plan (Google Drive)
 
 ---
 
-## 6. TIMELINES (DOUBT)
+## 5. TIMELINES (DOUBT)
 **Purpose:** Project milestones and deliverables with dependencies
 
 **Fields:**
@@ -165,7 +167,7 @@ THOUGHT OF- `project_plan_drive_link`: Detailed plan (Google Drive)
 
 ---
 
-## 7. TASKS
+## 6. TASKS
 **Purpose:** Highly detailed task management with complete tracking
 
 **Fields:**
@@ -202,7 +204,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 
 
-## 9. TASK_TIME_LOGS
+## 7. TASK_TIME_LOGS
 **Purpose:** Detailed time tracking per task
 
 **Fields:**
@@ -218,7 +220,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 10. REAL_TIME_UPDATES
+## 8. REAL_TIME_UPDATES
 **Purpose:** Project progress updates with media and location tracking
 
 **Fields:**
@@ -257,7 +259,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 11. MEDIA_ARTICLES
+## 9. MEDIA_ARTICLES
 **Purpose:** Media library - ONLY Google Drive links stored (NO actual files uploaded to Supabase)
 
 **Fields:**
@@ -305,7 +307,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 12. EXPENSE_CATEGORIES
+## 10. EXPENSE_CATEGORIES
 **Purpose:** Hierarchical expense classification
 
 **Fields:**
@@ -322,7 +324,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 13. PROJECT_EXPENSES
+## 11. PROJECT_EXPENSES
 **Purpose:** Extremely detailed expense tracking with approval workflow - ALL documents via Google Drive
 
 **Fields:**
@@ -375,7 +377,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 14. EXPENSE_APPROVALS
+## 12. EXPENSE_APPROVALS
 **Purpose:** Expense approval audit log
 
 **Fields:**
@@ -391,7 +393,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 15. BUDGET_ALLOCATION
+## 13. BUDGET_ALLOCATION
 **Purpose:** Detailed budget tracking by category
 
 **Fields:**
@@ -409,7 +411,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 
 ---
 
-## 16. BUDGET_UTILIZATION
+## 14. BUDGET_UTILIZATION
 **Purpose:** Partner-wise CSR budget tracking
 
 **Fields:**
@@ -431,7 +433,7 @@ DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 ---
 
 NO jarurat as of now
-## 17. UTILIZATION_CERTIFICATES
+## 15. UTILIZATION_CERTIFICATES
 **Purpose:** Official utilization certificates for partners
 
 **Fields:**
@@ -462,7 +464,7 @@ NO jarurat as of now
 
 ---
 
-## 18. BILLS
+## 16. BILLS
 **Purpose:** Bill and invoice management
 
 **Fields:**
@@ -493,7 +495,7 @@ NO jarurat as of now
 
 ---
 
-## 19. REPORTS
+## 17. REPORTS
 **Purpose:** Comprehensive report generation and management
 
 **Fields:**
@@ -529,7 +531,7 @@ NO jarurat as of now
 ---
 
 RUK JAO
-## 20. DAILY_REPORTS
+## 18. DAILY_REPORTS
 **Purpose:** Field activity and daily work reports
 
 **Fields:**
@@ -554,7 +556,7 @@ RUK JAO
 ---
 
 PROJECT based
-## 21. DATA_ENTRY_FORMS
+## 19. DATA_ENTRY_FORMS
 **Purpose:** Survey, assessment, and data collection forms
 
 **Fields:**
@@ -582,7 +584,7 @@ PROJECT based
 
 ---
 
-## 22. CALENDAR_EVENTS
+## 20. CALENDAR_EVENTS
 **Purpose:** Event and meeting scheduling with attendance tracking
 
 **Fields:**
@@ -618,7 +620,7 @@ PROJECT based
 
 ---
 
-## 23. EVENT_ATTENDANCE
+## 21. EVENT_ATTENDANCE
 **Purpose:** Track attendance for calendar events
 
 **Fields:**
@@ -635,7 +637,7 @@ PROJECT based
 ---
 
 
-## 24. NOTIFICATIONS
+## 22. NOTIFICATIONS
 **Purpose:** In-app notifications and alerts
 
 **Fields:**
@@ -665,7 +667,7 @@ PROJECT based
 
 ---
 
-## 25. COMMUNICATIONS
+## 23. COMMUNICATIONS
 **Purpose:** Complete communication history tracking
 
 **Fields:**
@@ -691,7 +693,7 @@ PROJECT based
 
 ---
 
-## 26. EMAIL_TEMPLATES
+## 24. EMAIL_TEMPLATES
 **Purpose:** Reusable email templates for automated notifications
 
 **Fields:**
@@ -706,7 +708,7 @@ PROJECT based
 
 ---
 
-## 27. WHATSAPP_TEMPLATES
+## 25. WHATSAPP_TEMPLATES
 **Purpose:** Reusable WhatsApp message templates for automated notifications
 
 **Fields:**
@@ -721,7 +723,7 @@ PROJECT based
 
 ---
 
-## 28. ACTIVITY_LOGS
+## 26. ACTIVITY_LOGS
 **Purpose:** Complete audit trail of all system activities
 
 **Fields:**
@@ -749,7 +751,7 @@ PROJECT based
 
 ---
 
-## 29. SYSTEM_LOGS
+## 27. SYSTEM_LOGS
 **Purpose:** System error and event logging
 
 **Fields:**
