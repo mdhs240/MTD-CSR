@@ -2,8 +2,8 @@
 
 ### **5-Role System**
 - `admin`: Full system access
-- `accountant`: Financial management
-- `project_manager`: Project oversight
+- `accountant`: Financial management     --> Same Access
+- `project_manager`: Project oversight   --> Same Access
 - `team_member`: Execution tasks
 - `client`: Read-only external access
 
@@ -20,17 +20,14 @@
 - `email`: Login email (unique)
 - `full_name`: Display name
 - `mobile_number`: Primary contact
-- `alternate_mobile`: Backup contact
 - `address, city, state, pincode`: Personal address
 - `role`: Access level (client/project_manager/accountant/admin/team_member)
 - `department, team, designation`: Org structure
 - `manager_id, reporting_to`: Hierarchy links
-- `date_of_joining`: Employment start
-- `employee_id`: HR ID (unique)
+- `cosmetic_employee_id`: HR ID (unique)
 - `is_active`: Account status
 - `last_login_at`: Security tracking
 - `preferences, permissions`: UI & access customization (JSONB)
-- `metadata`: Extra data (JSONB)
 - `created_at, updated_at, created_by, updated_by`: Audit trail
 
 ---
@@ -44,7 +41,7 @@
 - `company_name`: Legal entity name
 - `registration_number`: Company registration ID
 - `pan_number`: Tax identification (PAN)
-- `gst_number`: GST registration
+- `gst_number`: GST registration (OPTIONAL)
 - `contact_person`: Primary contact name
 - `designation`: Contact's job title
 - `email`: Partner email
@@ -53,10 +50,10 @@
 - `website`: Partner website URL
 - `logo_drive_link`: Company logo (Google Drive)
 - `mou_drive_link`: Memorandum of Understanding document (Google Drive)
-- `budget_allocated`: Total budget from partner
-- `budget_utilized`: Amount already spent
-- `budget_pending`: Amount in pending expenses
-- `fiscal_year`: Budget period
+DOUBT (might calculate from Project Table)- `budget_allocated`: Total budget from partner
+DOUBT (might calculate from Project Table)- `budget_utilized`: Amount already spent
+DOUBT (might calculate from Project Table)- `budget_pending`: Amount in pending expenses
+DOUBT - `fiscal_year`: Budget period
 - `agreement_start_date, agreement_end_date`: Contract validity
 - `payment_terms`: Payment conditions
 - `billing_cycle`: Invoice frequency
@@ -94,25 +91,19 @@
 - `approved_budget`: Approved amount
 - `utilized_budget`: Spent amount (auto-calculated)
 - `pending_budget`: In-process expenses (auto-calculated)
-- `contingency_budget`: Emergency funds
-- `total_beneficiaries, direct_beneficiaries, indirect_beneficiaries`: Impact numbers
-- `male_beneficiaries, female_beneficiaries, children_beneficiaries`: Demographics
-- `beneficiaries_reached`: Actual reach
+DOUBT(SHOONYA, MIYASWAKI)- `total_beneficiaries, direct_beneficiaries, indirect_beneficiaries`: Impact numbers
+DOUBT(SHOONYA, MIYASWAKI)- `male_beneficiaries, female_beneficiaries, children_beneficiaries`: Demographics
+DOUBT(SHOONYA, MIYASWAKI)- `beneficiaries_reached`: Actual reach
 - `targets, achievements`: Goals vs results (JSONB)
-- `proposal_drive_link`: Project proposal (Google Drive)
-- `approval_letter_drive_link`: Sanction letter (Google Drive)
-- `budget_sheet_drive_link`: Budget breakdown (Google Drive)
-- `mou_drive_link`: Agreement (Google Drive)
-- `project_plan_drive_link`: Detailed plan (Google Drive)
+THOUGHT OF- `proposal_drive_link`: Project proposal (Google Drive)
+THOUGHT OF- `approval_letter_drive_link`: Sanction letter (Google Drive)
+THOUGHT OF- `budget_sheet_drive_link`: Budget breakdown (Google Drive)
+THOUGHT OF- `mou_drive_link`: Agreement (Google Drive)
+THOUGHT OF- `project_plan_drive_link`: Detailed plan (Google Drive)
 - `documents_folder_link`: Main documents folder (Google Drive)
 - `completion_percentage`: Progress (0-100, auto-calculated)
 - `milestones_completed, total_milestones`: Milestone tracking
-- `risks, issues`: Risk & issue log (JSONB arrays)
-- `compliance_status`: Regulatory compliance
-- `last_audit_date, next_audit_date`: Audit schedule
 - `is_active`: Project status
-- `is_confidential`: Data sensitivity flag
-- `priority`: Urgency level (low/normal/high/urgent/critical)
 - `tags`: Searchable keywords (Array)
 - `notes`: Additional remarks
 - `metadata`: Extra data (JSONB)
@@ -130,42 +121,21 @@
 - `role`: Project-specific role
 - `designation`: Job title in project
 - `responsibilities`: Role description
-- `allocation_percentage`: Time allocation (0-100%)
 - `is_lead`: Lead position flag
 - `can_approve_expenses`: Expense approval permission
 - `can_assign_tasks`: Task assignment permission
 - `access_level`: Data access (full/limited/view_only)
-- `assigned_date`: Joining date
-- `removed_date`: Exit date
 - `is_active`: Current status
 - `notes`: Additional remarks
 - `created_at, updated_at, created_by, updated_by`: Audit trail
 
 ---
 
-## 5. PROJECT_STAKEHOLDERS
-**Purpose:** External contacts and stakeholders per project
 
-**Fields:**
-- `id`: Unique stakeholder identifier (UUID)
-- `project_id`: Link to project
-- `name`: Stakeholder name
-- `organization`: Affiliated org
-- `designation`: Job title
-- `stakeholder_type`: Category (Government/NGO/Community Leader/Vendor)
-- `email, phone`: Contact details
-- `address`: Location
-- `role_in_project`: Project involvement
-- `influence_level`: Impact level (High/Medium/Low)
-- `engagement_level`: Participation (Active/Moderate/Passive)
-- `communication_preference`: Preferred contact method
-- `notes`: Additional remarks
-- `is_active`: Current status
-- `created_at, updated_at, created_by`: Audit trail
 
 ---
 
-## 6. TIMELINES
+## 6. TIMELINES (DOUBT)
 **Purpose:** Project milestones and deliverables with dependencies
 
 **Fields:**
@@ -210,47 +180,27 @@
 - `category`: Classification
 - `assigned_to`: Task owner
 - `assigned_by`: Task creator
-- `reviewer_id`: Reviewer
 - `status`: Current state (not_started/in_progress/completed/on_priority/blocked/cancelled)
 - `priority`: Urgency level
 - `completion_percentage`: Progress (0-100)
-- `estimated_hours`: Planned effort
 - `actual_hours`: Logged time (auto-calculated)
 - `due_date`: Deadline
 - `start_date, completed_date`: Actual dates
 - `department`: Responsible dept
 - `tags`: Keywords (Array)
 - `dependencies`: Dependent task IDs (Array)
-- `blockers`: Blocking issues (Array)
-- `location, latitude, longitude`: Field task location
 - `is_visible_to_client`: Client visibility
 - `is_from_client_timeline`: Client-requested flag
 - `checklist`: Sub-tasks (JSONB array)
 - `attachments`: Task files (JSONB array of Drive links)
-- `comments_count, updates_count`: Interaction metrics (auto-calculated)
+DOUBT- `comments_count, updates_count`: Interaction metrics (auto-calculated)
 - `notes`: Additional remarks
 - `metadata`: Extra data (JSONB)
 - `created_at, updated_at, created_by, updated_by`: Audit trail
 
 ---
 
-## 8. TASK_COMMENTS
-**Purpose:** Thread-based communication on tasks
 
-**Fields:**
-- `id`: Unique comment identifier (UUID)
-- `task_id`: Link to task
-- `user_id`: Comment author
-- `parent_comment_id`: Reply thread hierarchy
-- `comment_text`: Comment content
-- `attachments`: Comment files (JSONB array of Drive links)
-- `mentions`: Tagged user IDs (Array)
-- `is_internal`: Internal team only flag
-- `is_edited`: Edit flag
-- `edited_at`: Last edit timestamp
-- `created_at`: Comment timestamp
-
----
 
 ## 9. TASK_TIME_LOGS
 **Purpose:** Detailed time tracking per task
@@ -480,6 +430,7 @@
 
 ---
 
+NO jarurat as of now
 ## 17. UTILIZATION_CERTIFICATES
 **Purpose:** Official utilization certificates for partners
 
@@ -577,6 +528,7 @@
 
 ---
 
+RUK JAO
 ## 20. DAILY_REPORTS
 **Purpose:** Field activity and daily work reports
 
@@ -592,17 +544,6 @@
 - `locations_visited`: Locations (Array)
 - `tasks_completed, tasks_pending, tasks_started`: Task metrics
 - `task_details`: Task breakdown (JSONB array)
-- `meetings_count`: Meeting count
-- `meetings_details`: Meeting info (JSONB array)
-- `people_met`: People contacted (Array)
-- `travel_details`: Travel info
-- `distance_km`: Distance traveled
-- `travel_expenses`: Travel cost
-- `challenges`: Issues faced
-- `issues_faced`: Issue list (Array)
-- `next_steps`: Next actions
-- `support_required`: Help needed
-- `hours_worked`: Work hours
 - `start_time, end_time`: Work timing
 - `photos, videos, documents`: Media (JSONB arrays of Drive links)
 - `notes`: Additional remarks
@@ -612,6 +553,7 @@
 
 ---
 
+PROJECT based
 ## 21. DATA_ENTRY_FORMS
 **Purpose:** Survey, assessment, and data collection forms
 
@@ -668,9 +610,6 @@
 - `recurrence_end_date`: Recurrence end
 - `reminders`: Reminder settings (JSONB array)
 - `status`: Event status (scheduled/ongoing/completed/cancelled)
-- `is_mandatory`: Mandatory attendance flag
-- `agenda`: Meeting agenda
-- `minutes`: Meeting minutes
 - `action_items`: Action items (JSONB array)
 - `documents`: Event docs (JSONB array of Drive links)
 - `notes`: Additional remarks
@@ -694,6 +633,7 @@
 - `created_at`: Record timestamp
 
 ---
+
 
 ## 24. NOTIFICATIONS
 **Purpose:** In-app notifications and alerts
@@ -736,12 +676,10 @@
 - `communication_type`: Type (email/whatsapp/phone/meeting/system)
 - `from_user_id`: Sender
 - `to_user_id`: Recipient
-- `cc_users, bcc_users`: CC/BCC users (Arrays)
 - `subject`: Communication subject
 - `message`: Communication message
 - `call_duration_minutes`: For phone calls
 - `call_outcome`: Call result
-- `meeting_notes`: For meetings
 - `attendees`: Meeting attendees (Array)
 - `attachments`: Communication files (JSONB array of Drive links)
 - `status`: Delivery status (sent/delivered/read/replied/failed)
@@ -823,88 +761,6 @@
 - `stack_trace`: Error stack trace
 - `context`: Log context (JSONB)
 - `created_at`: Log timestamp
-
----
-
-## 30. PROJECT_DEPENDENCIES
-**Purpose:** Track inter-project dependencies
-
-**Fields:**
-- `id`: Unique dependency identifier (UUID)
-- `project_id`: Dependent project
-- `depends_on_project_id`: Required project
-- `dependency_type`: Dependency type (finish_to_start/start_to_start)
-- `description`: Dependency details
-- `created_at`: Creation timestamp
-
----
-
-## 31. BENEFICIARIES
-**Purpose:** Detailed beneficiary tracking with personal and impact data
-
-**Fields:**
-- `id`: Unique beneficiary identifier (UUID)
-- `beneficiary_code`: Human-readable unique code
-- `project_id`: Link to project
-- `first_name, last_name, full_name`: Name details
-- `father_name, mother_name`: Parent details
-- `date_of_birth, age`: Age details
-- `gender`: Gender
-- `mobile, email`: Contact details
-- `address, city, state, pincode`: Location
-- `category`: Social category (SC/ST/OBC/General)
-- `is_bpl`: Below Poverty Line flag
-- `is_disabled`: Disability flag
-- `disability_type`: Disability details
-- `education_level, school_name, class_grade`: Education details
-- `occupation, annual_income`: Economic details
-- `family_size, head_of_family`: Family details
-- `enrollment_date`: Program join date
-- `status`: Beneficiary status (active/completed/dropped/transferred)
-- `completion_date`: Program completion date
-- `pre_assessment`: Baseline assessment (JSONB)
-- `post_assessment`: Post-intervention assessment (JSONB)
-- `progress_reports`: Progress tracking (JSONB array)
-- `photo_drive_link`: Photo (Google Drive)
-- `id_proof_drive_link`: ID document (Google Drive)
-- `documents`: All documents (JSONB array of Drive links)
-- `notes`: Additional remarks
-- `metadata`: Extra data (JSONB)
-- `created_at, updated_at, created_by`: Audit trail
-
----
-
-## 32. VENDORS(OPTIONAL GPT NA SUGGEST KIYA YEH ISLIYA DAAL DIYA BUT PDF MA MENTION NAHI THA)
-**Purpose:** Vendor master database with performance tracking
-
-**Fields:**
-- `id`: Unique vendor identifier (UUID)
-- `vendor_code`: Human-readable unique code
-- `name`: Vendor name
-- `company_name`: Legal entity name
-- `vendor_type`: Type (Supplier/Contractor/Service Provider)
-- `category`: Classification
-- `contact_person, email, phone, alternate_phone`: Contact details
-- `address, city, state, pincode`: Location
-- `gstin, pan, tan, registration_number`: Tax details
-- `bank_name, account_number, ifsc_code, branch`: Banking details
-- `rating`: Vendor rating (0-5)
-- `performance_score`: Performance score
-- `total_orders`: Order count
-- `total_value`: Total business value
-- `is_active`: Vendor status
-- `is_verified`: Verification flag
-- `is_blacklisted`: Blacklist flag
-- `blacklist_reason`: Blacklist reason
-- `documents`: Vendor documents (JSONB array of Drive links)
-- `notes`: Additional remarks
-- `metadata`: Extra data (JSONB)
-- `created_at, updated_at, created_by`: Audit trail
-
----
-
-
-
 
 
 ---
